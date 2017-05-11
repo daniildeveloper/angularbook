@@ -25,3 +25,7 @@ For build declarative UIs. ViewModel is pure representation of business data.
 3. *View* - dispaly data from business logic using ```$scope```.
 
 ```$scope``` is glue , way *controller* and *view* are not aware from each other.
+
+## Whats happens
+* ```ng-app ``` bootstap application.
+* ```ng-model``` init model and paste it to scope

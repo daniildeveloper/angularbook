@@ -2,5 +2,10 @@
 {{greeting}} User! The current date/time is <span>{{now | date: 'medium'}}</span>
 
 <p><button ng-click="getRandomHelloMessage()">Random Hello message!</button></p>
+
+<div class="data-bind">
+    <input type="text" ng-model="id">
+    <img ng-src="https://graph.facebook.com/{{id}}/picture?type=normal" alt="">
+</div>
 </div>
 
