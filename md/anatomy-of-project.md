@@ -11,7 +11,7 @@
 ## Whats happen by angularjs launch?
 
 1. app bootstraps with ```ng-app``` attribute(directive)
-2. ```ng-init```init data-models
+2. ```ng-init``` init data-models
 3. ```ng-model``` bind data-models
 
 
