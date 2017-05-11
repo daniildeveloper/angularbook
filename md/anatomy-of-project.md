@@ -7,7 +7,6 @@
 5. Directives - built in html.
 6. Expressions - represented by {{}}. Usefull for accessing scope models and functions.
 7. Template - html with additional markup.
-
 ## Whats happen by angularjs launch?
 
 1. app bootstraps with ```ng-app``` attribute(directive)

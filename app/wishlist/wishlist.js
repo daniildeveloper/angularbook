@@ -1,33 +1,41 @@
 'use strict';
 
-angular.module('myApp.wishlist', ['ngRoute'])
-
+var ex = angular.module('myApp.wishlist', ['ngRoute'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/wishlist', {
             templateUrl: 'wishlist/wishlist.html',
-            controller: 'SiteController'
+            controller: 'MessageController'
         });
-    }])
+    }]);
 
-    .controller('SiteController', function ($scope) {
-
-    })
-    .controller("BookController", function ($scope) {
-        $scope.books = [
-            "Jump Start to Html5",
-            "Jump Start to CSS",
-            "Jump start responsive design"
-        ];
-        $scope.name = "Scope for BookController";
-        $scope.addToWishList = function (book) {
-            $scope.wishListCount++;
+ex.controller("MessageController", function ($scope, $timeout) {
+    $scope.messages = [
+        {
+            sender: 'user1',
+            text: "Message 1"
         }
-        $scope.wishListCount = 0;
-        $scope.$watch("wishListCount", function (newValue, oldValue) {
-            console.log("Called " + newValue + " times");
-            if (newValue == 2) {
-                console.log("You have 2 items in wishlist!")
-            }
-        })
-    })
-    ;
+    ];
+
+    var timer;
+    var count = 0;
+
+    $scope.loadMessages = function () {
+        count++;
+        $scope.messages.push({
+            sender: "user1",
+            text: "Random message " + count
+        });
+
+        timer = $timeout($scope.loadMessages, 2000);
+
+        if (count === 3) {
+            $scope.$broadcast("EVENT_NO_DATA", "Not connected");
+            $timeout.cancel(timer);
+        }
+        timer = $timeout($scope.loadMessages, 2000);
+
+        $scope.on("EVENT_RECIVED", function () {
+            console.log("Recived emmited event");
+        });
+    }
+})
