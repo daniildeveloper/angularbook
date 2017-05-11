@@ -9,6 +9,7 @@ angular.module('myApp', [
   
   // my modules
   "myApp.greeting",
+  "myApp.wishlist"
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');

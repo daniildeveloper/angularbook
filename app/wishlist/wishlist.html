@@ -1,0 +1,16 @@
+<div ng-controller="SiteController">
+    <span>{{publisher}} excels in {{type}} books</span>
+
+    <div ng-controller="BookController">
+        <h3>Some of the popular books from {{publisher}}</h3>
+
+        My Wish List count: {{wishListCount}}
+
+        <ul>
+            <li ng-repeat="book in books">
+                {{book}}
+                <a ng-click="addToWishList(book)"> Add to wishlist</a>
+            </li>
+        </ul>
+    </div>
+</div>
