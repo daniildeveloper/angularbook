@@ -1,5 +1,6 @@
 <div ng-controller="MessageController">
     <h4>Messages</h4>
+    <ng-include src="'/wishlist/include.html'"></ng-include>
 
     <ul>
         <li ng-repeat="message in messages">{{message.text}} </li>
