@@ -38,4 +38,10 @@ ex.controller("MessageController", function ($scope, $timeout) {
             console.log("Recived emmited event");
         });
     }
-})
+});
+
+ex.service("helloService", function() {
+    this.sayHello = function() {//define instance method
+        console.log("Hello!");
+    }
+});
