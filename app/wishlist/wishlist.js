@@ -1,11 +1,14 @@
 'use strict';
 
 var ex = angular.module('myApp.wishlist', ['ngRoute'])
-    .config(['$routeProvider', function ($routeProvider) {
+    .config(['$routeProvider', function ($routeProvider, helloService) {
         $routeProvider.when('/wishlist', {
             templateUrl: 'wishlist/wishlist.html',
             controller: 'MessageController'
         });
+        
+        //dellos servie is service object.
+        helloService.sayHello();//h
     }]);
 
 ex.controller("MessageController", function ($scope, $timeout) {

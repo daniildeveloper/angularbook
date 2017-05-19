@@ -18,6 +18,10 @@ We ask Angualar to inject this services to use they in controllers.
 ### Register service
 
 ```js
+/**
+@param helloService - service name
+@param function init service
+*/
 angular.module("module").service("helloService", function() {
     this.sayHello = function() {//define instance method
         console.log("Hello!");
