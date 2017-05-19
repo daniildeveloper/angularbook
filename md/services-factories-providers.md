@@ -28,3 +28,9 @@ angular.module("module").service("helloService", function() {
     }
 });
 ```
+
+### Important things about ```service```
+- register with ```service()``` function of ```angular.module()```
+- angular create service from second argument - function.
+- service is singleton
+- lazily instant

@@ -6,7 +6,7 @@ var ex = angular.module('myApp.wishlist', ['ngRoute'])
             templateUrl: 'wishlist/wishlist.html',
             controller: 'MessageController'
         });
-        
+
         //dellos servie is service object.
         helloService.sayHello();//h
     }]);
@@ -43,8 +43,8 @@ ex.controller("MessageController", function ($scope, $timeout) {
     }
 });
 
-ex.service("helloService", function() {
-    this.sayHello = function() {//define instance method
+ex.service("helloService", function () {
+    this.sayHello = function () {//define instance method
         console.log("Hello!");
     }
 });
