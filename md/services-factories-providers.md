@@ -42,3 +42,20 @@ Service is loaded lazy. To load after module initializatiuon use ```module().run
 - angular create service from second argument - function.
 - service is singleton
 - lazily instant
+
+## Factory
+
+Factory is fast same as ```service``` but configurable and are singletoons to, but configurable. Can dependt from another services and factories.
+
+```js
+module("some").factory("helloFactory", function () {
+        return {
+            sayHello: function (name) {
+                console.log("Hello, " + name);
+            },
+            echo: function (message) {
+                console.log(message);
+            }
+        }
+    })
+```

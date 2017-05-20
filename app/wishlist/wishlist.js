@@ -8,7 +8,10 @@ var ex = angular.module('myApp.wishlist', ['ngRoute'])
         });
     }])
 
-    .controller("MessageController", function ($scope, $timeout, helloService) {
+    .controller("MessageController", function ($scope, $timeout, helloService, helloFactory) {
+
+        helloFactory.sayHello("Daniil");
+
         $scope.messages = [
             {
                 sender: 'user1',
@@ -40,14 +43,26 @@ var ex = angular.module('myApp.wishlist', ['ngRoute'])
 
             helloService.sayHello();
         }
+
     })
 
     .service("helloService", function () {
         this.sayHello = function () {//define instance method
             console.log("Hello!");
         }
-    });
+    })
 
-    angular.module("myApp.wishlist").run(function(helloService) {
-        helloService.sayHello();
-    });
+    .factory("helloFactory", function () {
+        return {
+            sayHello: function (name) {
+                console.log("Hello, " + name);
+            },
+            echo: function (message) {
+                console.log(message);
+            }
+        }
+    })
+
+angular.module("myApp.wishlist").run(function (helloService) {
+    helloService.sayHello();
+});
