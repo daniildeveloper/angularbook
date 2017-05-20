@@ -11,7 +11,7 @@ Main purpose of this components is that thay hold some logic that required multi
 - built-in ```$timeout``` service execute function after specifed interval
 - ```$http``` used to iteract with rest backends
 
-We ask Angualar to inject this services to use they in controllers.
+We ask Angular to inject this services to use they in controllers.
 
 > AngularJs Sevices are always singletons
 
@@ -28,6 +28,14 @@ angular.module("module").service("helloService", function() {
     }
 });
 ```
+
+### Eager load for service
+```js
+    angular.module("myApp.wishlist").run(function(helloService) {
+        helloService.sayHello();
+    });
+```
+Service is loaded lazy. To load after module initializatiuon use ```module().run(service)```.
 
 ### Important things about ```service```
 - register with ```service()``` function of ```angular.module()```
